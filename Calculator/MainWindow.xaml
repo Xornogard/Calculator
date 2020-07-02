@@ -1,0 +1,73 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="EquationExpressionLabel"             Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Top" DataContext="{Binding Expression}" Content="{Binding Expression, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label x:Name="EquationLabel"                       Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" DataContext="{Binding Entry}" Content="{Binding Entry, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button x:Name="SquarePowerOperatorButton"          Grid.Row="1" Grid.Column="0" Content="x&#x00B2;" FontSize="30" Click="SquarePowerOperatorButton_Click" />
+        <Button x:Name="InverseOperatorButton"              Grid.Row="1" Grid.Column="1" Content="1/x" FontSize="30" Click="InverseOperatorButton_Click" />
+        <Button x:Name="AbsoluteOperatorButton"             Grid.Row="1" Grid.Column="2" Content="abs" FontSize="30" Click="AbsoluteOperatorButton_Click" />
+        <Button x:Name="ExponentialOperatorButton"          Grid.Row="1" Grid.Column="3" Content="exp" FontSize="30" Click="ExponentialOperatorButton_Click" />
+        <Button x:Name="ClearButton"                        Grid.Row="1" Grid.Column="4" Content="C" FontSize="30" Click="ClearButton_Click" />
+        <Button x:Name="DeleteButton"                       Grid.Row="1" Grid.Column="5" Content="del" FontSize="30" Click="DeleteButton_Click" />
+
+        <Button x:Name="PowerOperatorButton"                Grid.Row="2" Grid.Column="0" Content="pow" FontSize="30" Click="PowerOperatorButton_Click" />
+        <Button x:Name="OpenParenthesisOperatorButton"      Grid.Row="2" Grid.Column="1" Content="(" FontSize="30" Click="OpenParenthesisOperatorButton_Click" />
+        <Button x:Name="ClosedParenthesisOperatorButton"    Grid.Row="2" Grid.Column="2" Content=")" FontSize="30" Click="ClosedParenthesisOperatorButton_Click" />
+        <Button x:Name="SqrtOperatorButton"                 Grid.Row="2" Grid.Column="3" Content="√" FontSize="30" Click="SqrtOperatorButton_Click" />
+        <Button x:Name="DivisionButton"                     Grid.Row="2" Grid.Column="4" Content="÷" FontSize="30" Click="DivisionButton_Click" />
+        <Button x:Name="PercentOperatorButton"              Grid.Row="2" Grid.Column="5" Content="%" FontSize="30" Click="PercentOperatorButton_Click" />
+
+        <Button x:Name="SinOperatorButton"                  Grid.Row="3" Grid.Column="0" Content="sin" FontSize="30" Click="SinOperatorButton_Click" />
+        <Button x:Name="SevenNumberButton"                  Grid.Row="3" Grid.Column="1" Content="7" FontSize="50" Background="White" Click="NumeralButton_Click" />
+        <Button x:Name="EightNumberButton"                  Grid.Row="3" Grid.Column="2" Content="8" FontSize="50" Background="White" Click="NumeralButton_Click"/>
+        <Button x:Name="NineNumberButton"                   Grid.Row="3" Grid.Column="3" Content="9" FontSize="50" Background="White" Click="NumeralButton_Click" />
+        <Button x:Name="MultiplicationOperatorButton"       Grid.Row="3" Grid.Column="4" Content="×" FontSize="30" Click="MultiplicationOperatorButton_Click" />
+        <Button x:Name="ModOperatorButton"                  Grid.Row="3" Grid.Column="5" Content="mod" FontSize="30" Click="ModOperatorButton_Click" />
+
+        <Button x:Name="CosOperatorButton"                  Grid.Row="4" Grid.Column="0" Content="cos" FontSize="30" Click="CosOperatorButton_Click"/>
+        <Button x:Name="FourNumberButton"                   Grid.Row="4" Grid.Column="1" Content="4" FontSize="50" Background="White" Click="NumeralButton_Click" />
+        <Button x:Name="FiveNumberButton"                   Grid.Row="4" Grid.Column="2" Content="5" FontSize="50" Background="White" Click="NumeralButton_Click"/>
+        <Button x:Name="SixNumberButton"                    Grid.Row="4" Grid.Column="3" Content="6" FontSize="50" Background="White" Click="NumeralButton_Click" />
+        <Button x:Name="MinusOperatorButton"                Grid.Row="4" Grid.Column="4" Content="-" FontSize="50" Click="MinusOperatorButton_Click" />
+        <Button x:Name="LogOperatorButton"                  Grid.Row="4" Grid.Column="5" Content="log" FontSize="30" Click="LogOperatorButton_Click" />
+
+        <Button x:Name="TgOperatorButton"                   Grid.Row="5" Grid.Column="0" Content="tg" FontSize="30" Click="TgOperatorButton_Click" />
+        <Button x:Name="OneNumberButton"                    Grid.Row="5" Grid.Column="1" Content="1" FontSize="50" Background="White" Click="NumeralButton_Click" />
+        <Button x:Name="TwoNumberButton"                    Grid.Row="5" Grid.Column="2" Content="2" FontSize="50" Background="White" Click="NumeralButton_Click"/>
+        <Button x:Name="ThreeNumberButton"                  Grid.Row="5" Grid.Column="3" Content="3" FontSize="50" Background="White" Click="NumeralButton_Click" />
+        <Button x:Name="PlusOperatorButton"                 Grid.Row="5" Grid.Column="4" Content="+" FontSize="30" Click="PlusOperatorButton_Click" />
+        <Button x:Name="LnOperatorButton"                   Grid.Row="5" Grid.Column="5" Content="ln" FontSize="30" Click="LnOperatorButton_Click" />
+
+        <Button x:Name="CtgOperatorButton"                  Grid.Row="6" Grid.Column="0" Content="ctg" FontSize="30" Click="CtgOperatorButton_Click" />
+        <Button x:Name="SignOperatorButton"                 Grid.Row="6" Grid.Column="1" Content="±" FontSize="30" Click="SignOperatorButton_Click" />
+        <Button x:Name="ZeroNumberButton"                   Grid.Row="6" Grid.Column="2" Content="0" FontSize="50" Background="White" Click="NumeralButton_Click"/>
+        <Button x:Name="CommaOperatorButton"                Grid.Row="6" Grid.Column="3" Content="," FontSize="30" Click="CommaOperatorButton_Click" />
+        <Button x:Name="EqualOperatorButton"                Grid.Row="6" Grid.Column="4" Grid.ColumnSpan="2" Content="=" FontSize="50" Background="Aqua" Click="EqualOperatorButton_Click"/>
+    </Grid>
+</Window>
